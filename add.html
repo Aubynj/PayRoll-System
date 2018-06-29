@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+  <html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Customers</title>
+			<link rel="stylesheet" href="./assets/css/materialize.min.css">
+            <link rel="stylesheet" href="./assets/css/style.css">
+            <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+            <link rel="stylesheet" href="./assets/css/material-icons.css">
+		</head>
+    <body>
+		<section class="container">
+			<section class="row">
+				<section class="col s2"></section>
+				<section class="col s8 intro center-align">
+                    <h3>Create Customers Account</h3>
+					<form class="add-form">
+                        <section class="row">
+                              <select class="input-field browser-default col s6" id="title">
+                                <option value="" disabled selected>Title</option>
+                                <option value="Mr.">Mr.</option>
+                                <option value="Mrs.">Mrs.</option>
+                                <option value="Miss.">Miss.</option>
+                              </select>
+                        </section>
+						<section class="row">
+							<div class="input-field col s6">
+								<input id="first_name" type="text" class="validate">
+								<label for="first">First name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                    <input id="last_name" type="text" class="validate">
+                                    <label for="last">Last name</label>
+                                </div>
+						</section>
+						<section class="row">
+							<div class="input-field col s12">
+								<input id="email" type="email" class="validate">
+								<label for="email">Email</label>
+							</div>
+                        </section>
+                        <section class="row">
+                            <div class="input-field col s6">
+                                <input id="tel" type="tel" class="validate">
+                                <label for="Tel">Tel</label>
+                            </div>
+                            <div class="input-field col s6">
+                               <input class="datepicker" id="date" type="text" class="validate">
+                               <label for="Date">Date</label>
+                            </div>
+                        </section>
+                        <section class="row">
+                              <select class="input-field browser-default col s6" id="gender">
+                                <option value="" disabled selected>Choose Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                              </select>
+                        </section><br><br>
+						<section class="row">
+							<div class="input-field col s12">
+								<button class="waves-effect waves-light btn-large" type="submit"><i class="material-icons left"></i>Create Account</button>
+							</div>
+                        </section>
+					</form>
+				</section>
+				<section class="col s2"></section>
+			</section>
+        </section>
+        <section class="fixed-action-btn">
+            <a class="btn-floating btn-large modal-trigger custom-btn" href="dashboard.html">
+                <i class="material-icons">keyboard_backspace</i>
+            </a>
+        </section>
+    </body>
+    <script>window.$ = window.jQuery = require('./assets/js/jquery-2.2.4.min.js');</script>
+    <script type="text/javascript" src="node_modules/hammerjs/hammer.min.js"></script>
+    <script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.js"></script>
+    <script text="text/javascript" src="./assets/js/addController.js"></script>
+    <script text="text/javascript" src="./assets/js/service.js"></script>
+  </html>

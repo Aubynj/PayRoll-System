@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+  <html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Dashboard | Area</title>
+			<link rel="stylesheet" href="./assets/css/materialize.min.css">
+            <link rel="stylesheet" href="./assets/css/style.css">
+            <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+            <link rel="stylesheet" href="./assets/css/material-icons.css">
+		</head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">&nbsp;&nbsp;&nbsp;
+              <a href="#!" class="brand-logo"><i class="material-icons"></i>PayRol</a>
+              <ul class="right hide-on-med-and-down">
+                <li><a data-target="modal1" class="modal-trigger"><i class="material-icons">search</i>search</a></li>
+                <li><a href="collapsible.html"><i class="material-icons">refresh</i>refresh</a></li>
+                <li><a href="index.html"><i class="material-icons">exit_to_app</i>view</a></li>
+                <li><a href="mobile.html"><i class="material-icons">more_vert</i>more</a></li>
+              </ul>
+            </div>
+        </nav>
+
+        <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4 class="center-align">RealTime customers search</h4> 
+                    <section class="row">
+                        <form>
+                            <section class="row">
+                                    <div class="input-field input-search z-depth-5">
+                                        <input id="search" type="search" class="autocomplete z-depth-5" placeholder="Search customers" required>
+                                    </div>
+                            </section>
+                            <section class="row center-align">
+                                <button class="waves-effect waves-light btn-large center-align" type="submit"><i class="material-icons left"></i>Search</button>
+                            </section>
+                        </form>
+                    </section>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+
+
+        <section class="fixed-action-btn">
+            <a class="btn-floating btn-large modal-trigger custom-btn pulse" href="add.html">
+                <i class="material-icons">add</i>
+            </a>
+        </section>
+    </body>
+    <script>window.$ = window.jQuery = require('./assets/js/jquery-2.2.4.min.js');</script>
+    <script type="text/javascript" src="node_modules/hammerjs/hammer.min.js"></script>
+    <script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.js"></script>
+    <script text="text/javascript" src="./assets/js/dashboardController.js"></script>
+    <script text="text/javascript" src="./assets/js/service.js"></script>
+  </html>
