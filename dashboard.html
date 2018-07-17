@@ -13,37 +13,75 @@
             <div class="nav-wrapper">&nbsp;&nbsp;&nbsp;
               <a href="#!" class="brand-logo"><i class="material-icons"></i>PayRol</a>
               <ul class="right hide-on-med-and-down">
-                <li><a data-target="modal1" class="modal-trigger"><i class="material-icons">search</i>search</a></li>
-                <li><a href="collapsible.html"><i class="material-icons">refresh</i>refresh</a></li>
-                <li><a href="index.html"><i class="material-icons">exit_to_app</i>view</a></li>
-                <li><a href="mobile.html"><i class="material-icons">more_vert</i>more</a></li>
+                <li><a data-target="modal1" class="modal-trigger" id="modal-operator"><i class="material-icons">search</i>search</a></li>
+                <li><a href="#!"><i class="material-icons">refresh</i>refresh</a></li>
+                <li><a onclick="logout()"><i class="material-icons">exit_to_app</i>view</a></li>
+                <li><a href="#!"><i class="material-icons">more_vert</i>more</a></li>
               </ul>
             </div>
         </nav>
 
         <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <h4 class="center-align">RealTime employees search</h4> 
-                    <section class="row">
-                        <form>
-                            <section class="row">
-                                    <div class="input-field input-search z-depth-5">
-                                        <input id="search" type="search" class="autocomplete z-depth-5" placeholder="Search customers" required>
-                                    </div>
-                            </section>
-                            <section class="row center-align">
-                                <button class="waves-effect waves-light btn-large center-align" type="submit"><i class="material-icons left"></i>Search</button>
-                            </section>
-                        </form>
-                    </section>
-                </div>
-                <div class="modal-footer">
-                </div>
+            <div class="modal-content">
+                <h4 class="center-align">RealTime employees search</h4> 
+                <section class="row">
+                    <form>
+                        <section class="row">
+                                <div class="input-field input-search z-depth-5">
+                                    <input id="search" type="search" class="autocomplete z-depth-5" placeholder="Search customers" required>
+                                </div>
+                        </section>
+                        <section class="row center-align">
+                            <button class="waves-effect waves-light btn-large center-align" type="submit"><i class="material-icons left"></i>Search</button>
+                        </section>
+                    </form>
+                </section>
             </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+
+        <section class="container">
+            <section class="row dashboard-box">
+                <section class="col s4 m4">
+                    <div class="card blue-grey darken-1">
+                      <div class="card-content white-text">
+                        <span class="card-title">Employees</span>
+                        <p>There are <span class="countEmployees"></span> employees at this time.</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#"></a>
+                      </div>
+                    </div>
+                </section>
+                <section class="col s4 m4">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                        <span class="card-title">Add Administrator</span>
+                        <p>Add users and grant priviledges</p>
+                        </div>
+                        <div class="card-action">
+                        <a href="addAdministrator.html" id="operator">Add Operator</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="col s4 m4">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                        <span class="card-title">Employees</span>
+                        <p>View all employees in sheets</p>
+                        </div>
+                        <div class="card-action">
+                        <a href="viewemployee.html">View Employees</a>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
 
 
         <section class="fixed-action-btn">
-            <a class="btn-floating btn-large modal-trigger custom-btn pulse" href="add.html">
+            <a class="btn-floating btn-large modal-trigger custom-btn pulse" id='float-employe' href="add.html">
                 <i class="material-icons">add</i>
             </a>
         </section>

@@ -1,47 +1,33 @@
 const electron = require('electron');
 const ipcRender = electron.ipcRenderer;
 
-$(window).load(function(){
-    $(".intro-lock").hide();
-    intro();
-})
 
-setTimeout(function(){
-    $(".intro-lock").show();
-},2000);
-
-$(".progress").hide();
-
-// Introduction method  
-function intro(){
-    ipcRender.on('intro-check-reply',(event,data)=>{
-        console.log(data.length);
-        if (data.length > 0){
-            window.location.href = 'index.html';
-        }
-    })
-    ipcRender.send('intro-check-message','Give-feedback');
-}
-
-$(".intro-lock").show();
 // Begin login scripts shere
-$(".intro-form").on("submit",(event)=>{
+$(".admin-account").on("submit",(event)=>{
     event.preventDefault();
-
-    var firstname = $("#first_name").val();
-    var lastname = $("#last_name").val()
-    var email = $("#email").val();
-    var password = $("#password").val()
+    let access = 0;
+    var firstname = $("#first_name").val(),
+        lastname = $("#last_name").val(),
+        email = $("#email").val(),
+        password = $("#password").val(),
+        chek = document.getElementById("access").checked;
 
     if (email == "" || password == "" || firstname == "" || lastname == ""){
         Materialize.toast('All fields are required', 4000)
     }else{
-        var data = {
+    
+        if (chek == true) {
+            access = 1;
+        }else if(chek == false) {
+            access = 0;
+        }
+
+        let data = {
             firstname : firstname,
             lastname : lastname,
             email : email.toLowerCase(),
             password : password,
-            access : parseInt(1)
+            access : parseInt(access)
         }
 
         let res = ipcRender.sendSync('create-event', data);
@@ -50,19 +36,17 @@ $(".intro-form").on("submit",(event)=>{
         }else if (res == 1) {
             Materialize.toast("Oops... There is problem creating account");
         }else if (res.email) {
-            localStorage.setItem('_id', res._id);
-            $(".progress").show();
             Materialize.toast("Success. Please wait...", 5000);
             $("#first_name").attr('disabled','disabled');
             $("#last_name").attr('disabled','disabled');
             $("#email").attr('disabled','disabled');
             $("#password").attr('disabled','disabled');
+            $("#access").attr('disabled','disabled');
             $('.btn-large').attr('disabled','disabled');
             setTimeout(function(){
-                window.location.href = 'index.html';
+                window.location.href = 'dashboard.html';
             },4000)
         }
-
-    }
+   }
 })
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Customers</title>
+			<link rel="stylesheet" href="./assets/css/materialize.min.css">
+            <link rel="stylesheet" href="./assets/css/style.css">
+            <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+            <link rel="stylesheet" href="./assets/css/material-icons.css">
+		</head>
+    <body>
+		<section class="container">
+			<section class="row">
+				<section class="col s2"></section>
+				<section class="col s8 intro center-align">
+                    <h3>Add Employees Deductions</h3>
+					<form class="update-deduction">
+                        <section class="row">
+                              <select class="input-field browser-default col s6" id="title">
+                                <option value="" disabled selected>Title</option>
+                                <option value="Mr.">Mr.</option>
+                                <option value="Mrs.">Mrs.</option>
+                                <option value="Miss.">Miss.</option>
+                              </select>
+                        </section>
+						<section class="row">
+							<div class="input-field col s6">
+								<input id="ssnit_tax" type="number" class="validate">
+								<label for="ssnit">SSNIT Tax</label>
+                            </div>
+                            <div class="input-field col s6">
+                                    <input id="income_tax" type="number" class="validate">
+                                    <label for="income">Income Tax</label>
+                                </div>
+						</section>
+						<!-- <section class="row">
+							<div class="input-field col s12">
+								<input id="email" type="email" class="validate">
+								<label for="email">Loads</label>
+							</div>
+                        </section> -->
+                        <section class="row">
+                            <div class="input-field col s6">
+                                <input id="loan" type="number" class="validate">
+                                <label for="loan">Loans</label>
+                            </div>
+                            <div class="input-field col s6">
+                               <input id="other" type="number" class="validate">
+                               <label for="other">Other Deduction</label>
+                            </div>
+                        </section><br><br>
+						<section class="row">
+							<div class="input-field col s12">
+								<button class="waves-effect waves-light btn-large" type="submit"><i class="material-icons left"></i>Update Deduction</button>
+							</div>
+                        </section>
+					</form>
+				</section>
+				<section class="col s2"></section>
+			</section>
+        </section>
+        <section class="fixed-action-btn">
+            <a class="btn-floating btn-large modal-trigger custom-btn" onclick="dedback()">
+                <i class="material-icons">keyboard_backspace</i>
+            </a>
+        </section>
+    </body>
+    <script>window.$ = window.jQuery = require('./assets/js/jquery-2.2.4.min.js');</script>
+    <script type="text/javascript" src="node_modules/hammerjs/hammer.min.js"></script>
+    <script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.js"></script>
+    <script text="text/javascript" src="./assets/js/deductionController.js"></script>
+    <script text="text/javascript" src="./assets/js/service.js"></script>
+  </html>

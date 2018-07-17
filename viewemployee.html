@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <html>
+		<head>
+			<meta charset="UTF-8">
+			<title>View Employees</title>
+			<link rel="stylesheet" href="./assets/css/materialize.min.css">
+            <link rel="stylesheet" href="./assets/css/style.css">
+            <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+            <link rel="stylesheet" href="./assets/css/material-icons.css">
+		</head>
+    <body>
+		<section class="container-fluid">
+            <h3 class="center-align"><strong><u>Employee Summary</u></strong></h3>
+			<section class="row fetch-table summary-view">
+				
+            </section>
+            <section class="move-center">
+                <a id="print-summary" class="waves-effect waves-light btn print-btn" onclick="printFunction()">Print Data</a>
+            </section>
+        </section>
+        <section class="fixed-action-btn">
+            <a id="back" class="btn-floating btn-large modal-trigger custom-btn" onclick="dashboardBack();">
+                <i class="material-icons">keyboard_backspace</i>
+            </a>
+        </section>
+    </body>
+    <script>window.$ = window.jQuery = require('./assets/js/jquery-2.2.4.min.js');</script>
+    <script type="text/javascript" src="node_modules/hammerjs/hammer.min.js"></script>
+    <script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.js"></script>
+    <script text="text/javascript" src="./assets/js/viewEmController.js"></script>
+    <script text="text/javascript" src="./assets/js/service.js"></script>
+  </html>

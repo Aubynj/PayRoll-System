@@ -22,10 +22,12 @@ $(function(){
             if (result === null) {
                 Materialize.toast("Oops... Email/Password is incorrect", 4000);
             }else if(result != null){
+                localStorage.setItem("_id" , result._id);
                 Materialize.toast("Successfully login. Please wait...");
                 $(".progress").show();
                 $("#email").attr('disabled','disabled');
                 $("#password").attr('disabled','disabled');
+                $("#login").attr('disabled','disabled');
                 setTimeout(function(){
                     window.location.href = 'dashboard.html';
                 },3000);

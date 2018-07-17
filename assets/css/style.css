@@ -13,6 +13,37 @@
     margin-top:80px
 }
 
+.move-center{
+    width: 10%;
+    margin: auto;
+    
+}
+
+.print-btn{
+    color : #000;
+    border: 1px solid #000;
+    background-color: #fff;
+    width: 70%
+}
+
+.print-btn:hover{
+    color: #fff;
+    background-color: #000;
+}
+.print-btn:focus{
+    color: #fff;
+    background-color: #000;
+}
+
+
+.summary-view{
+    margin-top: 10vh;
+}
+
+.modal-trigger{
+    cursor: pointer;
+}
+
 .modal .input-search {
     /* height: inherit; */
     padding-left: 4rem;
@@ -42,4 +73,11 @@
 .input-search{
     height: inherit;
     width: inherit;
+}
+.dashboard-box{
+    margin-top: 100px;
+}
+
+.redirect-link{
+    cursor: pointer;
 }

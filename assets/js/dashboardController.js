@@ -4,7 +4,9 @@ const ipcRender = electron.ipcRenderer;
 
 $(function(){
     let customers = {};
+    let admin_id = localStorage.getItem("_id");
 
+    // This is the event for realTime search
     ipcRender.on('fetch-customers-reply',(event, customersData)=>{
         //console.log(customersData);
         for(let index = 0; index < customersData.length; index++){
@@ -30,10 +32,43 @@ $(function(){
     
     ipcRender.send('fetch-customers-event','get-me-all-customers');
 
-
-
     $('.modal').modal();
     
-    
+    // Count Employees
+    let num = null;
+    let count = ipcRender.sendSync('count-employee',num);
+    if (count == 0) {
+        $(".countEmployees").html("no");
+    }else {
+        $(".countEmployees").html(count);
+    }
 
+
+    // Get admin Access point and restrict TASK
+    let adminInformation = ipcRender.sendSync('get-admin-info', admin_id);
+    // Assign access token to adminAccess
+    let adminAccess = adminInformation.access;
+
+    if (adminAccess == 0 || adminAccess == undefined){
+        document.getElementById('operator').href = 'javacript:void()';
+        document.getElementById('modal-operator').href = 'javascript:void()';
+        $(".fixed-action-btn").html("Restricted Account");
+
+        // Ensure that token access with 0 are disabled
+        $('#float-employe').attr('disabled','disabled');
+        $("#operator").on("click", function(event){
+            event.preventDefault();
+            Materialize.toast("Access restricted to create Admin account", 4000);
+        });
+
+        $("#modal-operator").on("click", function(event){
+            event.preventDefault();
+            Materialize.toast("Access restricted to alter employees details", 4000);
+        });
+    }
+    
+    logout = ()=>{
+        localStorage.clear();
+        window.location.href = "index.html";
+    }
 })
