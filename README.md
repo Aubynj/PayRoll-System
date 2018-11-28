@@ -30,7 +30,7 @@ To deploy this application in a package format, read [Electron Application Packa
 
 ---------------
 ### Buit with
-* [NodeJS](https://nodejs.org) Package Manager
+* [NodeJS](https://nodejs.org) Package Manager   
 * [Electron JS](https://electronjs.org) The framework used
 * [Nedb](http://stackabuse.com/nedb-a-lightweight-javascript-database/) Database used for the application 
 
